@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +37,16 @@ namespace ListView
         {
                 Employee selectedEmployee = listView_employees.SelectedItem as Employee;
                 viewModel.SelectedEmployee = selectedEmployee;
+        }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
