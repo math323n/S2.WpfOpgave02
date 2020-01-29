@@ -20,6 +20,7 @@ namespace ListView
     /// </summary>
     public partial class MainWindow: Window
     {
+        private bool canEdit = false;
         private ViewModel viewModel;
         public MainWindow()
         {
@@ -32,10 +33,8 @@ namespace ListView
 
         private void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
                 Employee selectedEmployee = listView_employees.SelectedItem as Employee;
                 viewModel.SelectedEmployee = selectedEmployee;
-            
         }
     }
 }
