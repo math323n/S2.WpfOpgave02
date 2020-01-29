@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Windows;
 
 namespace ListView
 {
     public class Repository
     {
-        private List<Employee> employees;
+        public static String hiredate;
+        public static List<Employee> employees;
 
         public Repository()
         {
@@ -27,5 +30,6 @@ namespace ListView
         {
             employees.Add(person);
         }
+        
     }
 }
