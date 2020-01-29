@@ -30,9 +30,12 @@ namespace ListView
 
        
 
-        private void EmployeeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
+                Employee selectedEmployee = listView_employees.SelectedItem as Employee;
+                viewModel.SelectedEmployee = selectedEmployee;
+            
         }
     }
 }

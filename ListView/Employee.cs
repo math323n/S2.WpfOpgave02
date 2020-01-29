@@ -85,5 +85,6 @@ namespace ListView
 
         public string FullName => $"{FirstName} {LastName}";
         public string FirstNameAndPosition => $"{FirstName} {Position}";
+        public string YearlySalaryEmployee => $"{YearlySalary} DKK";
     }
 }
