@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ListBox
+namespace ListView
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -27,6 +27,8 @@ namespace ListBox
             viewModel = new ViewModel();
             DataContext = viewModel;
         }
+
+       
 
         private void EmployeeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

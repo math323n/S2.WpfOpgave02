@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ListBox
+namespace ListView
 {
     public class Employee
     {
