@@ -11,7 +11,7 @@ namespace ListView
         public Repository()
         {
             employees = new List<Employee>() {
-                new Employee("Miles", "Teg", "Supreme Bashar", new DateTime(9243,5,14), 534939),
+                new Employee("Miles", "Teg", "Bashar", new DateTime(9243,5,14), 534939),
                 new Employee("Thufir", "Hawat", "Mentat", new DateTime(8932, 2, 24), 357098),
                 new Employee("Jens", "Pedersen", "Dealer", new DateTime(2019, 3, 18), 69000)
 

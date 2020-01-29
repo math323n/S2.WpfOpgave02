@@ -8,7 +8,9 @@
         Title="Listview"
         Height="300"
         Width="600">
+
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -36,8 +38,11 @@
                   Grid.ColumnSpan="2"
                   Grid.RowSpan="6"
                   Margin="9"
+                  Background="LightGray"
+                  Foreground="Black"
                   ItemsSource="{Binding Employees}"
                   SelectedItem="{Binding SelectedEmployee}">
+
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Navn"
@@ -50,7 +55,7 @@
             </ListView.View>
         </ListView>
 
-        <!-- Controls -->
+        <!-- Employee information -->
         <TextBlock x:Name="fullNameBlock"
                    Grid.Column="2"
                    Grid.ColumnSpan="2"
@@ -91,6 +96,9 @@
                     Grid.ColumnSpan="2"
                     Grid.Row="3"
                     SelectedDate="{Binding Path = SelectedEmployee.HireDate}" />
+        <!-- Buttons -->
+        <Button x:Name="saveButton"
+                Content="" />
 
     </Grid>
 </Window>
