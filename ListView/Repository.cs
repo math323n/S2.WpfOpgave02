@@ -9,7 +9,7 @@ namespace ListView
 {
     public class Repository
     {
-        public static String hiredate;
+     
         public static List<Employee> employees;
 
         public Repository()
@@ -31,6 +31,7 @@ namespace ListView
         {
             employees.Add(person);
         }
+        
         public static bool GetEmployeesFromFile()
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
