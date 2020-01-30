@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -30,6 +31,60 @@ namespace ListView
         {
             employees.Add(person);
         }
-        
+        public static bool GetEmployeesFromFile()
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.ShowDialog();
+            employees = new List<Employee>();
+            bool doesFileExist = fileDialog.CheckFileExists;
+           
+            if(doesFileExist)
+            {
+                using(StreamReader reader = new StreamReader(fileDialog.OpenFile(), Encoding.Default))
+                {
+                    string document = "";
+                    string firstName = "";
+                    string lastName = "";
+                    string position = "";
+                    double yearlySalary = 0;
+                    DateTime hireDate = new DateTime();
+                    while((document = reader.ReadLine()) != null)
+                    {
+                        string[] employeeData = document.Split(',');
+                        for(int i = 0; i < employeeData.Length; i += 5)
+                        {
+                            firstName = employeeData[i];
+                        }
+                        for(int i = 1; i < employeeData.Length; i += 5)
+                        {
+                            lastName = employeeData[i];
+                        }
+                        for(int i = 2; i < employeeData.Length; i += 5)
+                        {
+                            position = employeeData[i];
+                        }
+                        for(int i = 3; i < employeeData.Length; i += 5)
+                        {
+                            double.TryParse(employeeData[i], out yearlySalary);
+                        }
+                        for(int i = 4; i < employeeData.Length; i += 5)
+                        {
+                            DateTime.TryParse(employeeData[i], out hireDate);
+                        }
+                        Employee employee = new Employee(firstName, lastName, position, hireDate, yearlySalary);
+                        employees.Add(employee);
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("ADVARSEL! Kunne ikke forbinde til textfilen, tjek din sti!");
+                Environment.Exit(0);
+                return false;
+            }
+
+
+        }
     }
 }

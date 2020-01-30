@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ListView
 {
+   
     public class Employee
     {
         // Fields
@@ -16,6 +17,7 @@ namespace ListView
         // Contructors
         public Employee(string firstName, string lastName, string position, DateTime hireDate, double yearlySalary)
         {
+            
             FirstName = firstName;
             LastName = lastName;
             Position = position;
@@ -82,8 +84,10 @@ namespace ListView
             }
         }
 
+        public string EmployeeInfo => $"{FirstName} {LastName} {Position} {HireDate} {YearlySalary}";
 
         public string FullName => $"{FirstName} {LastName}";
         public string YearlySalaryEmployee => $"{YearlySalary} DKK";
     }
+
 }

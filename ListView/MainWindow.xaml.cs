@@ -20,23 +20,24 @@ namespace ListView
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow: Window
+    public partial class MainWindow : Window
     {
-        private bool canEdit = false;
+       
         private ViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
             viewModel = new ViewModel();
             DataContext = viewModel;
+            Repository.GetEmployeesFromFile();
         }
 
-       
+
 
         private void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-                Employee selectedEmployee = listView_employees.SelectedItem as Employee;
-                viewModel.SelectedEmployee = selectedEmployee;
+            Employee selectedEmployee = listView_employees.SelectedItem as Employee;
+            viewModel.SelectedEmployee = selectedEmployee;
         }
 
         private void editButton_Click(object sender, RoutedEventArgs e)
@@ -46,7 +47,9 @@ namespace ListView
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
+       
     }
 }
+

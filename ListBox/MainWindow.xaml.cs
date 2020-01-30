@@ -51,6 +51,7 @@ namespace WpfItemsControlOpgave01
         }
         public bool WriteToFile(string path)
         {
+
             bool fileExists = File.Exists(path);
             if(fileExists)
             {
