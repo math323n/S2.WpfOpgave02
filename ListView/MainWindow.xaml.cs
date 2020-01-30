@@ -23,7 +23,7 @@ namespace ListView
     public partial class MainWindow: Window
     {
 
-        private ViewModel viewModel;
+        public static ViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace ListView
             }
         }
 
-
+        
         public void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Employee selectedEmployee = listView_employees.SelectedItem as Employee;
@@ -64,7 +64,7 @@ namespace ListView
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
-
+            viewModel.LoadFromTextFile();
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
