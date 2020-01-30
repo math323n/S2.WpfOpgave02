@@ -6,4 +6,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="icons8-edit-50.png" />
+    <None Remove="save_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons8-edit-50.png" />
+    <Resource Include="save_icon.png" />
+  </ItemGroup>
+
 </Project>

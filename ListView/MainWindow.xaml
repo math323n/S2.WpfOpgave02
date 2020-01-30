@@ -8,10 +8,11 @@
         Title="Listview"
         Height="300"
         Width="600">
-    
+
     <Grid>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -28,13 +29,26 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
+        <Menu DockPanel.Dock="Top"
+              Grid.ColumnSpan="8">
+            <Menu.Items>
+                <MenuItem Header="Save"
+                          Click="MenuItem_Save" />
+                <MenuItem Header="Open"
+                          Click="MenuItem_Open" />
+                <MenuItem Header="Edit" />
+                <MenuItem Header="Delete" />
+            </Menu.Items>
+        </Menu>
 
 
         <!-- List of Employees -->
         <ListView x:Name="listView_employees"
                   Grid.Column="0"
-                  Grid.Row="0"
+                  Grid.Row="1"
                   Grid.ColumnSpan="2"
                   Grid.RowSpan="6"
                   Margin="9"
@@ -59,60 +73,77 @@
         <TextBlock x:Name="fullNameBlock"
                    Grid.Column="2"
                    Grid.ColumnSpan="2"
+                   HorizontalAlignment="center"
                    Grid.Row="1"
-                   Text="Fulde navn:"
+                   Text="Fulde navn: "
                    VerticalAlignment="Center"
-                   FontSize="18" />
+                   FontSize="16" />
         <TextBlock x:Name="fullNameBox"
                    Grid.Column="4"
                    Grid.ColumnSpan="2"
                    Grid.Row="1"
-                   FontSize="18"
+                   FontSize="16"
                    VerticalAlignment="Center"
                    Text="{Binding Path = SelectedEmployee.FullName}" />
         <TextBlock x:Name="salaryBlock"
+                   HorizontalAlignment="center"
                    Grid.Column="2"
                    Grid.ColumnSpan="2"
                    Grid.Row="2"
-                   Text="Årlige løn:"
+                   Text="Årlige løn: "
                    VerticalAlignment="Center"
-                   FontSize="18" />
-        <TextBlock x:Name="yearlySalaryBox"
+                   FontSize="16" />
+        <TextBlock x:Name="yearlySalaryBox" 
                    Grid.Column="4"
                    Grid.ColumnSpan="2"
                    Grid.Row="2"
                    Text="{Binding Path = SelectedEmployee.YearlySalaryEmployee}"
                    VerticalAlignment="Center"
-                   FontSize="18" />
-        <TextBlock x:Name="hireDate"
+                   FontSize="16" />
+        <TextBlock x:Name="positionEmployee"
                    Grid.Column="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="center"
                    Grid.ColumnSpan="2"
                    Grid.Row="3"
+                   FontSize="16"
+                   Text="Stilling: "/>
+        <TextBlock x:Name="positionBox"
+                   Grid.Column="4"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="center"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="3"
+                   FontSize="16"
+                   Text="{Binding Path = SelectedEmployee.Position}" />
+        <TextBlock x:Name="hireDate"
+                   Grid.Column="2"
+                   HorizontalAlignment="center"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="4"
                    Text="Tiltrædelsesdato:"
                    VerticalAlignment="Center"
                    FontSize="15.5" />
         <DatePicker x:Name="hireDatePicker"
-                    Grid.Column="4"
-                    Grid.ColumnSpan="2"
-                    Grid.Row="3"
+                    Grid.Column="5"
+                    Grid.ColumnSpan="3"
+                    VerticalAlignment="Center"
+                    Grid.Row="4"
                     SelectedDate="{Binding Path = SelectedEmployee.HireDate}" />
+        <Rectangle Grid.Column="2"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="6"
+                   Grid.RowSpan="6"
+                   Fill="#FF0D9A1E"
+                   Stroke="#FF64D016"
+                   Opacity="0.497"
+                   Visibility="Visible"
+                   RadiusX="20"
+                   RadiusY="20"
+                   Panel.ZIndex="-1"
+                   StrokeThickness="0" />
 
-        <!-- Buttons -->
-        <!-- Edit Button-->
-        <Button x:Name="editButton"
-                Grid.Column="3"
-                Margin="10"
-                Click="editButton_Click">
-            <Image 
-                   
-                   Source="Icons/icons8-edit-50.png"></Image>
-        </Button>
-        <Button x:Name="saveButton"
-                Grid.Column="4"
-                Margin="10"
-                Click="saveButton_Click">
-            <Image Source="Icons/save_icon.png"></Image>
-        </Button>
+
 
     </Grid>
 </Window>

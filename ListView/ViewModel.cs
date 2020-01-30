@@ -14,9 +14,7 @@ namespace ListView
         public ViewModel()
         {
             repository = new Repository();
-
             List<Employee> employees = repository.GetAll();
-
             Employees = new ObservableCollection<Employee>(employees);
         }
         public void LoadFromTextFile()
@@ -36,8 +34,6 @@ namespace ListView
                     Employees.Add(new Employee(employeeData[0],
                           employeeData[1], employeeData[2], hireDate,
                          salary));
-
-
                 }
             }
 

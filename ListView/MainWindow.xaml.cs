@@ -62,16 +62,18 @@ namespace ListView
         }
 
 
-        private void editButton_Click(object sender, RoutedEventArgs e)
+     
+   
+
+        private void MenuItem_Save(object sender, RoutedEventArgs e)
+        {
+             WriteToFile();
+        }
+
+        private void MenuItem_Open(object sender, RoutedEventArgs e)
         {
             viewModel.LoadFromTextFile();
         }
-
-        private void saveButton_Click(object sender, RoutedEventArgs e)
-        {
-            WriteToFile();
-        }
-
     }
 }
 
