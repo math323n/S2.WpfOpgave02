@@ -85,7 +85,7 @@ namespace ListView
         }
 
         public string EmployeeInfo => $"{FirstName} {LastName} {Position} {HireDate} {YearlySalary}";
-
+        public string EmployeeHiredDate => $"{HireDate.ToString("yyyy, MM, dd")}";
         public string FullName => $"{FirstName} {LastName}";
         public string YearlySalaryEmployee => $"{YearlySalary} DKK";
     }

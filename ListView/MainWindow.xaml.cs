@@ -54,16 +54,16 @@ namespace ListView
             }
         }
 
+        public void ReadMode()
+        {
+            
+        }
         
         public void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Employee selectedEmployee = listView_employees.SelectedItem as Employee;
             viewModel.SelectedEmployee = selectedEmployee;
         }
-
-
-     
-   
 
         private void MenuItem_Save(object sender, RoutedEventArgs e)
         {
@@ -73,6 +73,11 @@ namespace ListView
         private void MenuItem_Open(object sender, RoutedEventArgs e)
         {
             viewModel.LoadFromTextFile();
+        }
+
+        private void MenuItem_New(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
