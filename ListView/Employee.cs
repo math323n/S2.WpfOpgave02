@@ -13,6 +13,8 @@ namespace ListView
         private string position;
         private DateTime hireDate;
         private double yearlySalary;
+        private string fullName;
+        private double yearlySalaryEmployee;
 
         // Contructors
         public Employee(string firstName, string lastName, string position, DateTime hireDate, double yearlySalary)
@@ -22,19 +24,24 @@ namespace ListView
             Position = position;
             HireDate = hireDate;
             YearlySalary = yearlySalary;
-
+            
         }
 
         // Properties
         public string FirstName
         {
+            get;
+            set;
+        }
+        public string FullName
+        {
             get
             {
-                return firstName;
+                return $"{FirstName} {LastName}";
             }
             set
             {
-                firstName = value;
+                fullName = value;
             }
         }
 
@@ -83,10 +90,34 @@ namespace ListView
             }
         }
 
+        public string YearlySalaryEmployee
+        {
+            get
+            {
+               
+                return $"{YearlySalary} DKK";
+            }
+            set
+            {
+                ;
+            }
+        }
+        public string HiredEmployeeDate
+        {
+            get
+            {
+                return $"{HireDate.ToString("yyyy. MMMM, dd")}";
+            }
+            set
+            {
+                ;
+            }
+        }
+
         public string EmployeeInfo => $"{FirstName} {LastName} {Position} {HireDate} {YearlySalary}";
-        public string EmployeeHiredDate => $"{HireDate.ToString("yyyy. MMMM, dd")}";
-        public string FullName => $"{FirstName} {LastName}";
-        public string YearlySalaryEmployee => $"{YearlySalary} DKK";
+     
+        
+        
     }
 
 }

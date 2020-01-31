@@ -71,6 +71,7 @@
             </ListView.View>
         </ListView>
 
+        
         <!-- Employee information -->
         <TextBlock x:Name="fullNameBlock"
                    Grid.Column="2"
@@ -82,13 +83,15 @@
                    FontSize="16" />
         <TextBox x:Name="fullNameBox"
                  Background="LightGreen"
-                   Grid.Column="5"
-                   Grid.ColumnSpan="2"
-                   Grid.Row="1"
-                   FontSize="16"
+                 Grid.Column="5"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="1"
+                 FontSize="16"
                  BorderThickness="0"
-                   VerticalAlignment="Center"
-                 Text="{Binding SelectedEmployee.FullName}" />
+                 VerticalAlignment="Center"
+                 Text = "{Binding SelectedEmployee.FullName}" />
+
+ 
         <TextBlock x:Name="salaryBlock"
                    Grid.Column="2"
                    Grid.ColumnSpan="2"
@@ -103,6 +106,7 @@
                  IsReadOnly="True"
                  Grid.ColumnSpan="2"
                    Grid.Row="2"
+                
                    Text="{Binding SelectedEmployee.YearlySalaryEmployee}"
                    VerticalAlignment="Center"
                    FontSize="16" />
@@ -119,8 +123,9 @@
                    VerticalAlignment="Center"
                    Grid.ColumnSpan="2"
                    Grid.Row="3"
-                   FontSize="16"              
-                   Text="{Binding Path = SelectedEmployee.Position}" />
+                   FontSize="16"
+                 IsReadOnly="True"
+                   Text = "{Binding SelectedEmployee.Position}" />
         <TextBlock x:Name="hireDate"
                    Grid.Column="2"
                    Grid.ColumnSpan="3"
@@ -137,7 +142,7 @@
                  BorderThickness="0"
                  IsReadOnly="True"
                    FontSize="16"
-                    Text="{Binding Path = SelectedEmployee.EmployeeHiredDate}" />
+                 Text="{Binding Path = SelectedEmployee.HiredEmployeeDate}" />
         
         <Rectangle Grid.Column="2"
                    Grid.Row="1"
