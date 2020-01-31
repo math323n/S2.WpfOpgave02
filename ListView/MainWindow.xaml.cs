@@ -29,7 +29,7 @@ namespace ListView
             InitializeComponent();
             viewModel = new ViewModel();
             DataContext = viewModel;
-
+           
         }
         public void WriteToFile()
         {
@@ -57,6 +57,9 @@ namespace ListView
         public void ReadMode()
         {
             
+            yearlySalaryBox.IsReadOnly = true;
+            positionBox.IsReadOnly = true;
+            hireDatePicker.IsReadOnly = true;
         }
         
         public void SelectionChanged(object sender, SelectionChangedEventArgs e)
